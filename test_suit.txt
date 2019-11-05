@@ -1,0 +1,46 @@
+'''
+# Write down more test cases in the same pattern as follows.
+# Make sure you have at least one test case for each possible case
+# python -m doctest -v test_suit.txt
+>>> import BasicMatrixOperations as BMO
+>>> m1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> m2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+>>> sum = [[10, 10, 10], [10, 10, 10], [10, 10, 10]] # m1+m2
+>>> difference12 = [[-8, -6, -4], [-2, 0, 2], [4, 6, 8]] # m1-m2
+>>> difference21 = [[8, 6, 4], [2, 0, -2], [-4, -6, -8]] # m2-m1
+>>> product12 = [[30, 24, 28], [84, 69, 54], [138, 114, 90]] # m1*m2
+>>> product21 = [[90, 114, 138], [54, 69, 84], [18, 24, 30]] # m2*m1
+>>> transposem1 = [[1, 4, 7], [2, 5, 8], [3, 6, 9]] # transpose of m1
+>>> constantproduct = [[2, 4, 6], [8, 10, 12], [14, 16, 18]]  # multiplying m1 by 2
+
+>>> BMO.is_equal(m1, m1)
+True
+
+>>> BMO.is_equal(BMO.transpose(m1), transposem1)
+True
+
+>>> BMO.is_equal(BMO.add(m1, m2), sum)
+True
+
+>>> BMO.is_equal(BMO.subtract(m1, m2), difference12):
+True
+
+>>> BMO.is_equal(BMO.subtract(m2, m1), difference21):
+True
+
+>>> BMO.is_equal(BMO.multiply(m1, 2), constantproduct):
+True
+
+>>> BMO.is_equal(BMO.multiply(m1, m2), product12):
+True
+
+>>> BMO.is_equal(BMO.multiply(m2, m1), product21):
+True
+
+>>> ZeroMatrixInput = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
+>>> ZeroMatrixOutput= [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+    
+>>> BMO.is_equal(BMO.zero_matrix(ZeroMatrixInput), ZeroMatrixOutput)
+True
+
+'''
