@@ -2,13 +2,13 @@
 # Write down more test cases in the same pattern as follows.
 # Make sure you have at least one test case for each possible case
 # python -m doctest -v test_suit.txt
->>> import BasicMatrixOperations as BMO
+>>> import BasicMatrixOperation as BMO
 >>> m1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 >>> m2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
 >>> sum = [[10, 10, 10], [10, 10, 10], [10, 10, 10]] # m1+m2
 >>> difference12 = [[-8, -6, -4], [-2, 0, 2], [4, 6, 8]] # m1-m2
 >>> difference21 = [[8, 6, 4], [2, 0, -2], [-4, -6, -8]] # m2-m1
->>> product12 = [[30, 24, 28], [84, 69, 54], [138, 114, 90]] # m1*m2
+>>> product12 = [[30, 24, 18], [84, 69, 54], [138, 114, 90]] # m1*m2
 >>> product21 = [[90, 114, 138], [54, 69, 84], [18, 24, 30]] # m2*m1
 >>> transposem1 = [[1, 4, 7], [2, 5, 8], [3, 6, 9]] # transpose of m1
 >>> constantproduct = [[2, 4, 6], [8, 10, 12], [14, 16, 18]]  # multiplying m1 by 2
@@ -22,25 +22,86 @@ True
 >>> BMO.is_equal(BMO.add(m1, m2), sum)
 True
 
->>> BMO.is_equal(BMO.subtract(m1, m2), difference12):
+>>> BMO.is_equal(BMO.subtract(m1, m2), difference12)
 True
 
->>> BMO.is_equal(BMO.subtract(m2, m1), difference21):
+>>> BMO.is_equal(BMO.subtract(m2, m1), difference21)
 True
 
->>> BMO.is_equal(BMO.multiply(m1, 2), constantproduct):
+>>> BMO.is_equal(BMO.multiply(m1, 2), constantproduct)
 True
 
->>> BMO.is_equal(BMO.multiply(m1, m2), product12):
+>>> BMO.is_equal(BMO.multiply(m1, m2), product12)
 True
 
->>> BMO.is_equal(BMO.multiply(m2, m1), product21):
+>>> BMO.is_equal(BMO.multiply(m2, m1), product21)
 True
 
 >>> ZeroMatrixInput = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
 >>> ZeroMatrixOutput= [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
-    
+
 >>> BMO.is_equal(BMO.zero_matrix(ZeroMatrixInput), ZeroMatrixOutput)
 True
 
+
+#Our Test Cases
+
+>>> M1 = [[3, 2, 1], [6, 5, 4], [9, 8, 7]]
+>>> M2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> sum = [[4, 4, 4], [10, 10, 10], [16, 16, 16]] # M1+M2
+>>> exceptionAddition = "M1 and M2 are not compatible for addition"
+>>> difference12 = [[2, 0, -2], [2, 0, -2], [2, 0, -2]] # M1-M2
+>>> difference21 = [[-2, 0, 2], [-2, 0, 2], [-2, 0, 2]] # M2-M1
+>>> product12 = [[18, 24, 30], [54, 69, 84], [90, 114, 138]] # M1*M2
+>>> product21 = [[42, 36, 30], [96, 81, 66], [150, 126, 102]] # M2*M1
+>>> transposeM1 = [[3, 6, 9], [2, 5, 8], [1, 4, 7]] # transpose of M1
+>>> constantproduct = [[6, 4, 2], [12, 10, 8], [18, 16, 14]]  # multiplying M1 by 2
+
+>>> BMO.is_equal(M1, M1)
+True
+
+
+>>> BMO.is_equal(BMO.transpose(M1), transposeM1)
+True
+
+>>> BMO.is_equal(BMO.add(M1, M2), sum)
+True
+
+
+>>> BMO.is_equal(BMO.subtract(M1, M2), difference12)
+True
+
+>>> BMO.is_equal(BMO.subtract(M2, M1), difference21)
+True
+
+>>> BMO.is_equal(BMO.multiply(M1, 2), constantproduct)
+True
+
+>>> BMO.is_equal(BMO.multiply(M1, M2), product12)
+True
+
+>>> BMO.is_equal(BMO.multiply(M2, M1), product21)
+True
+
+>>> ZeroMatrixInput = [[3,2,1],[6,0,4],[9,8,7]]
+>>> ZeroMatrixOutput= [[3,0,1],[0,0,0],[9,0,7]]
+
+>>> ZeroMatrixInput = [[0,4,4],[10,10,10],[16,16,16]]
+>>> ZeroMatrixOutput= [[0,0,0],[0,10,10],[0,16,16]]
+
+>>> ZeroMatrixInput = [[1,2,3,0],[1,2,3,4],[0,2,3,4]]
+>>> ZeroMatrixOutput= [[0,0,0,0],[0,2,3,0],[0,0,0,0]]
+
+>>> ZeroMatrixInput = [[1,0,0,3],[3,0,5,2],[1,3,2,5]]
+>>> ZeroMatrixOutput= [[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+
+>>> ZeroMatrixInput = [[0,1,2],[3,4,5]]
+>>> ZeroMatrixOutput= [[0,0,0],[0,4,5]]
+
+
+>>> BMO.is_equal(BMO.zero_matrix(ZeroMatrixInput), ZeroMatrixOutput)
+True
+
+
 '''
+

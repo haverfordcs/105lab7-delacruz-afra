@@ -32,8 +32,8 @@ Remember
     Criticize yourself first
     Slow down
 
-<Member1 name: >
-<Member2 name: >
+<Member1 name: Marisleysis De La Cruz >
+<Member2 name: Tazkia Afra >
 
 Problem: implement basic matrix operations as outlined in BasicMatrixOperation.py and write the test cases in the doctest file
 Description: read the details provided in BasicMatrixOperation.pdf
